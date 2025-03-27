@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alexei Goldenberg - Ator, Diretor e Dramaturgo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<script>
+  document.querySelector('.cta-button').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita o comportamento padrão
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth', // Animação suave
+      block: 'start'      // Alinha ao topo da seção
+    });
+  });
+</script>
+
+<body>
+  <!-- Menu de Navegação -->
+  <nav>
+  <!-- Ícones sociais à esquerda -->
+  <div class="social-icons">
+    <a href="https://www.instagram.com/alex6golden/" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/alexei-cardoso-goldenberg-158351213/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+
+  <!-- Menu hamburguer e itens -->
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <ul id="menu">
+    <li><a href="#about">Sobre</a></li>
+    <li><a href="#measurements">Medidas</a></li>
+    <li><a href="#resume">Currículo</a></li>
+    <li><a href="#gallery">Galeria</a></li>
+     <li><a href="#media">Mídia</a></li>
+    <li><a href="#workshops">Workshops</a></li>
+    <li><a href="#contact">Contato</a></li>
+  </ul>
+</nav>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script>
+  
+  <!-- Seção Home -->
+  <section id="home">
+    <div class="hero">
+      <h1>Alexei Goldenberg</h1>
+      <p>Ator, Diretor e Dramaturgo</p>
+      <a href="#about" class="cta-button">Conheça Mais</a>
+    </div>
+  </section>
+
+  <!-- Seção Sobre -->
+  <section id="about">
+    <h2>Sobre</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Olá, sou Alexei Goldenberg, ator, diretor, professor e dramaturgo com 9 anos de experiência em teatro, cinema e TV. Especializado em técnicas vocais e de expressão corporal, misturando exercícios de estudiosos como Stanislavski, Meyerhold e Meisner, busco sempre por novos trabalhos desafiadores, seja atuando, dirigindo ou ensinando.</p>
+      </div>
+      <div class="about-image">
+        <img src="imagens/Alexei Headshot 2.jpg" alt="Alexei Goldenberg">
+      </div>
+    </div>
+  </section>
+
+ <!-- Seção Medidas -->
+ <section id="measurements">
+    <h2>Medidas</h2>
+    <div class="measurements-content">
+      <div class="measurements-text">
+        <p><strong>Altura:</strong> 1,71m</p>
+        <p><strong>Cor dos Olhos:</strong> Castanho</p>
+        <p><strong>Cor do Cabelo:</strong> Castanho Escuro</p>
+        <p><strong>Manequim:</strong> 42</p>
+        <p><strong>Calçado:</strong> 40</p>
+      </div>
+      <div class="measurements-image">
+        <img src="imagens/Galery 5.jpg" alt="Imagem de Medidas">
+      </div>
+    </div>
+  </section>
+  <!-- Seção Currículo -->
+  <section id="resume">
+    <h2>Currículo</h2>
+    <div class="resume-content">
+      <p><strong>Formação:</strong></p>
+      <ul>
+        <li>Interpretação Teatral pela UFRGS (2023)</li>
+        <li>Curso Formação de Atores da Escola Casa de Teatro (2017/2018)</li>
+      </ul>
+      <p><strong>Experiência (Atuação):</strong></p>
+      <ul>
+        <li>"BAKAS" (2018), dirigido por Larissa Sanguiné</li>
+        <li>"Fábrica de Robôs" (2018), dirigido por Camila Bauer</li>
+        <li>"DanceiLaquê" (2018), dirigido por Wagner Ferraz</li>
+        <li>"Malva-Rosa" (2019), atuação e direção coletiva</li>
+        <li>"Retaliação" (2022), curta-metragem dirigido por Julia Kieling</li>
+        <li>"SKYLAND" (2022), dirigido por Larissa Sanguiné e Alexei Goldenberg</li>
+        <li>"Sangue e Pudins" (2024), dirigido por Luciano Alabarse</li>
+        <li>"Anamnese" (2025), atuação e direção coletiva</li>
+      </ul>
+      <p><strong>Direção:</strong></p>
+      <ul>
+        <li>"Insônia" (2019), Grupo Skatá</li>
+        <li>"Amor Nunca Morre: Um Teatro Documentado" (2022)</li>
+        <li>Assistência de Direção em "Os Mamutes: Uma Crise de Elenco" (2023)</li>
+        <li>Codireção em "A Gaivota" (2023)</li>
+      </ul>
+      <p><strong>Habilidades:</strong> Boxe, Jiu-Jitsu, Natação, Dança, Canto, Baterista</p>
+      <p><strong>Idiomas falados:</strong> Português, Inglês, Espanhol</p>
+    </div>
+  </section>
+
+  <!-- Seção Galeria -->
+  <section id="gallery">
+    <h2>Galeria</h2>
+    <div class="gallery-content">
+      <img src="imagens/Galery 1.jpg" alt="Foto 1">
+      <img src="imagens/Galery 2.jpg" alt="Foto 2">
+      <img src="imagens/Galery 3.jpg" alt="Foto 3">
+      <img src="imagens/Galery 4.jpg" alt="Foto 4">
+      <!-- Adicione mais imagens aqui -->
+    </div>
+  </section>
+
+  <!-- Seção Mídia -->
+<section id="media">
+  <h2>Mídia</h2>
+  <div class="media-content">
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/Y3IUk3R7X6s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/quGogDPu3zk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Seção Workshops -->
+  <section id="workshops">
+    <h2>Workshops</h2>
+    <div class="workshops-content">
+      <p>Alexei é professor de atuação para todos os níveis (crianças, adolescentes, amadores e profissionais). Seus <strong>Workshops</strong> são voltados para o desenvolvimento de habilidades como <strong>Oratória, Expressividade e Ritmo (Jogo de Cena).</strong> Seu objetivo é ajudar tanto atores em formação, quanto empresas, empresários, seus trabalhadores e funcionários a melhorarem sua comunicação com clientes e parceiros no mercado de trabalho.</p>
+      <p>Para maiores informações sobre orçamentos e agendamentos, favor preencher e enviar mensagem através da aba Contato.</p>
+    </div>
+  </section>
+
+  <!-- Seção Contato -->
+  <section id="contact">
+    <h2>Contato</h2>
+    <div class="contact-content">
+      <form action="#" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div class="contact-info">
+        <p><strong>Email:</strong> alexeicardosogoldenberg@gmail.com</p>
+        <p><strong>Telefone:</strong> +55 54 999768460</p>
+        <p><strong>Localização:</strong> Porto Alegre, RS, Brasil</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Alexei Goldenberg. Todos os direitos reservados.</p>
+  </footer>
+  <script>
+    // Função para verificar se a seção está visível na tela
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
+      );
+    }
+  
+    // Função para ativar as animações
+    function animateSections() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => {
+        if (isElementInViewport(section)) {
+          section.classList.add('visible');
+        }
+      });
+    }
+  
+    // Ativar animações ao carregar a página e ao rolar
+    window.addEventListener('load', animateSections);
+    window.addEventListener('scroll', animateSections);
+  </script>
+    
+    
+    

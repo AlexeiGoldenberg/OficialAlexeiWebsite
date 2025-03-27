@@ -1,0 +1,545 @@
+/* Estilos Gerais */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #ADD8E6;
+}
+
+a {
+  color: #ADD8E6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Menu de Navegação */
+nav {
+  background-color: #333;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Seção Home */
+#home {
+  position: relative;
+  background-image: url('imagens/Alexei\ Headshot\ .jpg');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay escuro */
+  z-index: 1;
+}
+
+#home .hero {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button {
+  background-color: #007BFF; /* Cor do botão */
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+#home h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+#home p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  background-color: #ADD8E6;
+  color: #1a1a1a;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Seção Sobre */
+#about {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  max-width: 600px;
+  text-align: left;
+}
+
+.about-image img {
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
+}
+
+ /* Seção Medidas */
+ #measurements {
+  padding: 2rem;
+  background-color: #333;
+  text-align: center;
+}
+
+/* Seção Currículo */
+#resume {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  text-align: center;
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+
+/* Seção Mídia */
+#media {
+  padding: 2rem;
+  text-align: center;
+}
+
+.media-content {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os vídeos quebrem para a próxima linha em telas menores */
+  justify-content: center;
+  gap: 2rem; /* Espaço entre os vídeos */
+}
+
+.video {
+  width: 100%; /* Largura total em telas pequenas */
+  max-width: 600px; /* Mantém o tamanho tradicional do YouTube */
+  aspect-ratio: 16 / 9; /* Mantém a proporção correta */
+  background: #000; /* Evita flashes brancos ao carregar */
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Layout para telas médias e grandes */
+@media (min-width: 768px) {
+  .video {
+    width: calc(50% - 1rem); /* Dois vídeos por linha */
+    max-width: 560px; /* Tamanho tradicional do YouTube */
+  }
+}
+
+
+
+
+/* Seção Galeria */
+#gallery {
+  padding: 2rem;
+  background-color: #333;
+}
+
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Seção Workshops */
+#workshops {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Seção Contato */
+#contact {
+  padding: 2rem;
+  background-color: #333;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+}
+
+form label {
+  display: block;
+  margin: 0.5rem 0 0.2rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+form button {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-info {
+  max-width: 400px;
+  text-align: left;
+}
+
+/* Rodapé */
+footer {
+  background-color: #1a1a1a;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+/* Animação de Fade-in de Baixo para Cima */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Aplicar Animação às Seções */
+  section {
+    opacity: 0; /* Inicia invisível */
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+ 
+  
+  .measurements-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .measurements-text {
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .measurements-text p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+  }
+  
+  .measurements-image img {
+    border-radius: 10px;
+    width: 300px;
+    height: auto;
+  }
+  
+  /* Animação de Fade-in de Baixo para Cima */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Aplicar Animação às Seções */
+  section {
+    opacity: 0; /* Inicia invisível */
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+ /* Classe para ativar a animação */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Menu de Navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+/* Menu Hamburguer para Mobile */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    display: none; /* Esconde o menu inicialmente */
+  }
+
+  nav ul.active {
+    display: flex; /* Mostra o menu quando ativo */
+  }
+
+  .menu-icon {
+    display: block; /* Ícone do menu hamburguer */
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+/* Ajustes Gerais para Mobile */
+@media (max-width: 768px) {
+  /* Seção Home */
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  #home p {
+    font-size: 1.2rem;
+  }
+
+  /* Seção Sobre */
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+  /* Seção Medidas */
+  .measurements-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .measurements-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 1rem;
+  }
+
+  /* Seção Galeria */
+  .gallery-content {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  /* Seção Contato */
+  .contact-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contact-info {
+    margin-top: 1rem;
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity; /* Melhora a precisão do scroll */
+}
+
+/* Ajuste de velocidade (opcional) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+#about {
+  transition: opacity 0.5s ease;
+}
+
+#about:target {
+  animation: highlight 1.5s ease;
+}
+
+@keyframes highlight {
+  0% { opacity: 0.8; }
+  50% { background-color: rgba(0, 123, 255, 0.1); } /* Cor de destaque */
+  100% { opacity: 1; background-color: transparent; }
+}
+
+/* Container principal do menu */
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #333; /* Cor de fundo do menu */
+}
+
+/* Ícones sociais (à esquerda) */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-right: auto; /* Empurra o resto do menu para a direita */
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #007BFF;
+  transform: scale(1.1);
+}
+
+/* Menu hamburguer (mobile) */
+.menu-icon {
+  display: none; /* Escondido inicialmente */
+  cursor: pointer;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Itens do menu */
+#menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu li {
+  margin: 0 10px;
+}
+
+#menu a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Mostra o ícone hamburguer */
+    margin-left: auto; /* Posiciona à direita */
+  }
+
+  #menu {
+    display: none; /* Esconde os itens inicialmente */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Ajuste conforme a altura do seu menu */
+    left: 0;
+    background-color: #333;
+  }
+
+  #menu.active {
+    display: flex; /* Mostra quando ativo */
+  }
+
+  .social-icons {
+    margin-right: 0;
+  }
+}
