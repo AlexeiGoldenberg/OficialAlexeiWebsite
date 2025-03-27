@@ -35,22 +35,20 @@
     </a>
   </div>
 
+  <div class="language-switcher">
+    <button id="btn-pt" class="active">PT</button>
+    <button id="btn-en">EN</button>
+  </div>
   <!-- Menu hamburguer e itens -->
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
   <ul id="menu">
     <li><a href="#about">Sobre</a></li>
-    <li><a href="#measurements">Medidas</a></li>
     <li><a href="#resume">Currículo</a></li>
     <li><a href="#gallery">Galeria</a></li>
      <li><a href="#media">Mídia</a></li>
     <li><a href="#workshops">Workshops</a></li>
     <li><a href="#contact">Contato</a></li>
   </ul>
-
-  <div class="language-switcher">
-    <button onclick="changeLanguage('pt')">PT</button>
-    <button onclick="changeLanguage('en')">EN</button>
-  </div>
 </nav>
 
   <script>
@@ -98,17 +96,31 @@
       </div>
     </div>
   </section>
+  
   <!-- Seção Currículo -->
   <section id="resume">
-    <h2>Currículo</h2>
-    <div class="resume-content">
-      <p><strong>Formação:</strong></p>
+    <div class="resume-container">
+
+  <div id="measurements" class="resume-subsection"></div>
+    <h2>Medidas</h2>
+    <div class="measurements-content">
+      <div class="measurements-text">
+        <p><strong>Altura:</strong> 1,71m</p>
+        <p><strong>Cor dos Olhos:</strong> Castanho</p>
+        <p><strong>Manequim:</strong> 42</p>
+        <p><strong>Calçado:</strong> 40</p>
+  <div id="formation" calss="resume-subsection">
+    <h2>Formação:</h2>
+      <div class="formation-content"></div>
       <ul>
         <li>Interpretação Teatral pela UFRGS (2023)</li>
         <li>Curso Formação de Atores da Escola Casa de Teatro (2017/2018)</li>
       </ul>
-      <p><strong>Experiência (Atuação):</strong></p>
-      <ul>
+
+  <div id="works" class="resume-subsection">
+        <h2>Trabalhos Realizados</h2>
+        <div class="works-content">
+          <ul class="works-list">
         <li>"BAKAS" (2018), dirigido por Larissa Sanguiné</li>
         <li>"Fábrica de Robôs" (2018), dirigido por Camila Bauer</li>
         <li>"DanceiLaquê" (2018), dirigido por Wagner Ferraz</li>

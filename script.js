@@ -1,8 +1,24 @@
 const translations = {
     pt: {
-      // Menu
+    // Hero
+        homeTitle: "Alexei Goldenberg",
+            homeSubtitle: "Ator | Diretor | Dramaturgo",
+            aboutTitle: "Sobre",
+            resumeTitle: "Currículo",
+            measurementsTitle: "Medidas",
+            worksTitle: "Trabalhos Realizados",
+        },
+        
+        en: {
+            homeTitle: "Alexei Goldenberg",
+            homeSubtitle: "Actor | Director | Playwright",
+            aboutTitle: "About",
+            resumeTitle: "Resume",
+            measurementsTitle: "Measurements",
+            worksTitle: "Work Experience",
+        
+      // Menu  
       menuAbout: "Sobre",
-      menuMeasurements: "Medidas",
       menuResume: "Currículo",
       menuMedia: "Mídia",
       menuGallery: "Galeria",
@@ -10,14 +26,13 @@ const translations = {
       menuContact: "Contato",
       
       // Seções
-      aboutBio: "Olá, sou Alexei Goldenberg...",
-      measurementsTitle: "Medidas Físicas",
+      aboutBio: "Olá, sou Alexei Goldenberg , ator, diretor, professor e dramaturgo com 9 anos de experiência em teatro, cinema e TV. Especializado em técnicas vocais e de expressão corporal, misturando exercícios de estudiosos como Stanislavski, Meyerhold e Meisner, busco sempre por novos trabalhos desafiadores, seja atuando, dirigindo ou ensinando. ",
+      measurementsTitle: "Medidas ",
       // Continue com todos os textos...
     },
     en: {
       // Menu
       menuAbout: "About",
-      menuMeasurements: "Measurements",
       menuResume: "Resume",
       menuMedia: "Media",
       menuGallery: "Gallery",

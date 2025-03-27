@@ -132,24 +132,73 @@ nav ul li a {
   height: auto;
 }
 
- /* Seção Medidas */
- #measurements {
-  padding: 2rem;
-  background-color: #333;
-  text-align: center;
-}
+ 
 
 /* Seção Currículo */
 #resume {
-  padding: 2rem;
-  background-color: #1a1a1a;
+    padding: 4rem 2rem;
+    background-color: #1a1a1a;
   text-align: center;
 }
 
-.resume-content {
-  max-width: 1000px;
+.resume-container {
+  max-width: 1200px;
   margin: 0 auto;
-  text-align: left;
+}
+
+.resume-subsection {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: #252525;
+  border-radius: 8px;
+}
+
+.resume-subsection h2 {
+  color: #007BFF;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.measurements-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.measurements-text p {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.works-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.works-list li {
+  background-color: #333;
+  padding: 1.5rem;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.works-list li:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .measurements-content {
+    flex-direction: column;
+  }
+  
+  .works-list {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -545,6 +594,8 @@ nav {
 }
 
 .language-switcher {
+  display: flex;
+  gap: 10px;
   margin-left: 20px;
 }
 
@@ -552,14 +603,16 @@ nav {
   background: none;
   border: 1px solid white;
   color: white;
-  padding: 5px 10px;
+  padding: 5px 15px;
   margin: 0 2px;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
+  transition: all 0.3s;
 }
 
 .language-switcher button:hover {
   background: rgba(255,255,255,0.1);
+  opacity: 0.8;
 }
 
 /* Destaque para o idioma ativo */
