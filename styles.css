@@ -543,3 +543,28 @@ nav {
     margin-right: 0;
   }
 }
+
+.language-switcher {
+  margin-left: 20px;
+}
+
+.language-switcher button {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 2px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.language-switcher button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+/* Destaque para o idioma ativo */
+.language-switcher button.active {
+  background: #007BFF;
+  border-color: #007BFF;
+}
+
