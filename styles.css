@@ -6,6 +6,8 @@ body {
   background-color: #1a1a1a;
   color: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
+    width: 100%;
 }
 
 h1, h2, h3 {
@@ -20,6 +22,111 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Desabilita scroll durante o loading */
+body.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(173, 216, 230, 0.3);
+  border-top-color: #ADD8E6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loader-text {
+  color: #ADD8E6;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Progress Bar */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(173, 216, 230, 0.2);
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 4px;
+  background: #ADD8E6;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Botão de voltar ao topo */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(173, 216, 230, 0.7);
+  color: #1a1a1a;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.scroll-top.show {
+  opacity: 1;
+}
+
+/* Barra de Progresso */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #ADD8E6;
+  width: 0%;
+  transition: width 0.1s ease;
+}
+
 
 /* Menu de Navegação */
 nav {
@@ -52,7 +159,7 @@ nav ul li a {
   position: relative;
   background-image: url('imagens/Alexei\ Headshot\ .jpg');
   background-size: cover;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
   display: flex;
@@ -132,26 +239,122 @@ nav ul li a {
   height: auto;
 }
 
- /* Seção Medidas */
- #measurements {
-  padding: 2rem;
-  background-color: #333;
-  text-align: center;
-}
 
-/* Seção Currículo */
+/* Estilos para a seção informacoes */
 #resume {
-  padding: 2rem;
+  padding: 3rem 2rem;
   background-color: #1a1a1a;
-  text-align: center;
+  position: relative;
 }
 
-.resume-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: left;
+/* Navegação interna */
+.internal-nav {
+  position: sticky;
+  top: 80px;
+  background: #1a1a1a;
+  z-index: 50;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
 }
 
+.internal-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.internal-nav a {
+  color: #ADD8E6;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.internal-nav a:hover {
+  background: rgba(173, 216, 230, 0.1);
+}
+
+/* Subseções */
+.subsection {
+  margin-bottom: 4rem;
+  scroll-margin-top: 120px;
+}
+
+.subsection h3 {
+  color: #ADD8E6;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #333;
+}
+
+.subsection-content {
+  padding: 0 1rem;
+}
+
+/* Layout específico para medidas */
+.measurements-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.measurements-image img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Listas formatadas */
+.work-list, .skills-list, .languages-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.work-list li, .skills-list li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.work-list li::before, .skills-list li::before {
+  content: "•";
+  color: #ADD8E6;
+  position: absolute;
+  left: 0;
+}
+
+.director, .company {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .internal-nav {
+    top: 60px;
+  }
+  
+  .internal-nav ul {
+    gap: 0.5rem;
+  }
+  
+  .subsection {
+    scroll-margin-top: 100px;
+  }
+}
 
 /* Seção Mídia */
 #media {
@@ -197,13 +400,26 @@ nav ul li a {
 
 .gallery-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
 }
 
 .gallery-content img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  filter: grayscale(30%);
+}
+
+.gallery-content img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%);
+  z-index: 10;
 }
 
 /* Seção Workshops */
@@ -410,18 +626,63 @@ nav ul li {
   .contact-content {
     flex-direction: column;
     align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   form {
     width: 100%;
     max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ADD8E6;
   }
 
   .contact-info {
     margin-top: 1rem;
     text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ADD8E6;
   }
 }
+
+.contact-info p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.contact-info p:nth-child(1)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ADD8E6"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>');
+}
+
+.contact-info p:nth-child(2)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ADD8E6"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>');
+}
+
+.contact-info p:nth-child(3)::before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ADD8E6"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>');
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -542,4 +803,215 @@ nav {
   .social-icons {
     margin-right: 0;
   }
+}
+
+.section-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.nav-arrow {
+  background: rgba(173, 216, 230, 0.7);
+  border: none;
+  color: #1a1a1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover {
+  background: #ADD8E6;
+  transform: scale(1.1);
+}
+
+nav ul li a.active {
+  color: #ADD8E6;
+  font-weight: bold;
+  position: relative;
+}
+
+nav ul li a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ADD8E6;
+  animation: underline 0.3s ease-out;
+}
+
+@keyframes underline {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* Estilos para o conteúdo detalhado */
+.education-list li, .work-list li, .skills-list li, .languages-list li {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #333;
+}
+
+.institution, .director, .company, .role, .year {
+  display: block;
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 0.3rem;
+}
+
+.year {
+  display: inline-block;
+  background: #333;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.description {
+  display: block;
+  font-style: italic;
+  margin-top: 0.5rem;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.level {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Melhorias de layout */
+.subsection-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.work-category {
+  margin-bottom: 3rem;
+}
+
+.skills-list strong {
+  color: #ADD8E6;
+  min-width: 120px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .skills-list strong {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .work-list li, .skills-list li {
+    padding-left: 0;
+  }
+  
+  .work-list li::before, .skills-list li::before {
+    display: none;
+  }
+}
+
+/* Estilos para o menu com subitens */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.has-submenu.active .submenu {
+  display: block;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .has-submenu > a::after {
+    content: "+";
+    margin-left: 0.5rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .has-submenu.active > a::after {
+    content: "-";
+  }
+
+  .submenu {
+    padding-left: 1rem;
+    border-left: 2px solid #ADD8E6;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .has-submenu:hover .submenu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background: #333;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    border-radius: 0 0 5px 5px;
+  }
+
+  .submenu li {
+    padding: 0.5rem 1rem;
+  }
+
+  .submenu a {
+    white-space: nowrap;
+  }
+}
+
+/* Submenu do Currículo */
+.has-submenu {
+  position: relative;
+}
+
+.has-submenu > .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.has-submenu.active > .submenu {
+  display: block;
+}
+
+.has-submenu:hover > .submenu {
+  display: block;
+}
+
+.has-submenu > a {
+  cursor: pointer;
+}
+
+/* Ajustes de Menu Hamburguer */
+.menu {
+  display: none;
+  /* Outras configurações */
+}
+
+.menu.active {
+  display: block;
 }

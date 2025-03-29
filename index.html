@@ -21,6 +21,19 @@
 </script>
 
 <body>
+  <div class="loader">
+    <div class="loader-spinner"></div>
+    <div class="loader-text">CARREGANDO</div>
+  </div>
+
+  <!-- Progress Bar (colocar no início do body) -->
+<div class="progress-container">
+  <div class="progress-bar"></div>
+</div>
+
+<div id="cookie-banner" style="display:none; position:fixed; bottom:0; background:#333; color:white; width:100%; padding:10px; text-align:center;">
+  Nosso site usa cookies. <button onclick="acceptCookies()">Aceitar</button>
+</div>
   <!-- Menu de Navegação -->
   <nav>
   <!-- Ícones sociais à esquerda -->
@@ -36,9 +49,17 @@
   <!-- Menu hamburguer e itens -->
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
   <ul id="menu">
+    <li><a href="#home">Home</a></li>
     <li><a href="#about">Sobre</a></li>
-    <li><a href="#measurements">Medidas</a></li>
-    <li><a href="#resume">Currículo</a></li>
+    <li class="has-submenu">
+      <a href="#resume">Informações</a>
+    <ul class="submenu">
+      <li><a href="#measurements">Medidas</a></li>
+      <li><a href="#education">Formação</a></li>
+      <li><a href="#experience">Trabalhos</a></li>
+      <li><a href="#skills">Aptidões</a></li>
+    </ul>
+  </li>
     <li><a href="#gallery">Galeria</a></li>
      <li><a href="#media">Mídia</a></li>
     <li><a href="#workshops">Workshops</a></li>
@@ -75,10 +96,13 @@
     </div>
   </section>
 
- <!-- Seção Medidas -->
- <section id="measurements">
-    <h2>Medidas</h2>
-    <div class="measurements-content">
+ <!-- Seção Currículo -->
+<section id="resume">
+
+  <!-- Subseção Medidas -->
+  <article class="subsection" id="measurements">
+    <h3>Medidas</h3>
+    <div class="subsection-content">
       <div class="measurements-text">
         <p><strong>Altura:</strong> 1,71m</p>
         <p><strong>Cor dos Olhos:</strong> Castanho</p>
@@ -87,41 +111,107 @@
         <p><strong>Calçado:</strong> 40</p>
       </div>
       <div class="measurements-image">
-        <img src="imagens/Galery 5.jpg" alt="Imagem de Medidas">
+        <img src="imagens/Galery 5.jpg" alt="Medidas Corporais de Alexei Goldenberg">
       </div>
     </div>
-  </section>
-  <!-- Seção Currículo -->
-  <section id="resume">
-    <h2>Currículo</h2>
-    <div class="resume-content">
-      <p><strong>Formação:</strong></p>
-      <ul>
-        <li>Interpretação Teatral pela UFRGS (2023)</li>
-        <li>Curso Formação de Atores da Escola Casa de Teatro (2017/2018)</li>
+  </article>
+
+  <!-- Subseção Formação -->
+  <article class="subsection" id="education">
+    <h3>Formação</h3>
+    <div class="subsection-content">
+      <ul class="education-list">
+        <li>
+          <strong>Interpretação Teatral</strong>
+          <span class="institution">UFRGS - Universidade Federal do Rio Grande do Sul</span>
+          <span class="year">(2023)</span>
+        </li>
+        <li>
+          <strong>Curso Formação de Atores</strong>
+          <span class="institution">Escola Casa de Teatro, Porto Alegre</span>
+          <span class="year">(2017-2018)</span>
+        </li>
       </ul>
-      <p><strong>Experiência (Atuação):</strong></p>
-      <ul>
-        <li>"BAKAS" (2018), dirigido por Larissa Sanguiné</li>
-        <li>"Fábrica de Robôs" (2018), dirigido por Camila Bauer</li>
-        <li>"DanceiLaquê" (2018), dirigido por Wagner Ferraz</li>
-        <li>"Malva-Rosa" (2019), atuação e direção coletiva</li>
-        <li>"Retaliação" (2022), curta-metragem dirigido por Julia Kieling</li>
-        <li>"SKYLAND" (2022), dirigido por Larissa Sanguiné e Alexei Goldenberg</li>
-        <li>"Sangue e Pudins" (2024), dirigido por Luciano Alabarse</li>
-        <li>"Anamnese" (2025), atuação e direção coletiva</li>
-      </ul>
-      <p><strong>Direção:</strong></p>
-      <ul>
-        <li>"Insônia" (2019), Grupo Skatá</li>
-        <li>"Amor Nunca Morre: Um Teatro Documentado" (2022)</li>
-        <li>Assistência de Direção em "Os Mamutes: Uma Crise de Elenco" (2023)</li>
-        <li>Codireção em "A Gaivota" (2023)</li>
-      </ul>
-      <p><strong>Habilidades:</strong> Boxe, Jiu-Jitsu, Natação, Dança, Canto, Baterista</p>
-      <p><strong>Idiomas falados:</strong> Português, Inglês, Espanhol</p>
     </div>
-  </section>
+  </article>
+
+  <!-- Subseção Trabalhos Realizados -->
+<article class="subsection" id="experience">
+  <h3>Trabalhos Realizados</h3>
+  <div class="subsection-content">
+    <section class="work-category">
+      <h4>Atuação</h4>
+      <ul class="work-list">
+        <li><strong>"BAKAS"</strong> (2018) - Dirigido por Larissa Sanguiné</li>
+        <li><strong>"Fábrica de Robôs"</strong> (2018) - Dirigido por Camila Bauer</li>
+        <li><strong>"DanceiLaquê"</strong> (2018) - Dirigido por Wagner Ferraz</li>
+        <li><strong>"Malva-Rosa"</strong> (2019) - Atuação e direção coletiva</li>
+        <li><strong>"Retaliação"</strong> (2022) - Curta-metragem dirigido por Julia Kieling</li>
+        <li><strong>"SKYLAND"</strong> (2022) - Codirigido por Larissa Sanguiné e Alexei Goldenberg</li>
+        <li><strong>"Sangue e Pudins"</strong> (2024) - Dirigido por Luciano Alabarse</li>
+        <li><strong>"Anamnese"</strong> (2025) - Atuação e direção coletiva</li>
+      </ul>
+    </section>
+    
+    <section class="work-category">
+      <h4>Direção</h4>
+      <ul class="work-list">
+        <li><strong>"Insônia"</strong> (2019) - Grupo Skatá</li>
+        <li><strong>"Amor Nunca Morre: Um Teatro Documentado"</strong> (2022)</li>
+        <li><strong>"Os Mamutes: Uma Crise de Elenco"</strong> (2023) - Assistência de Direção</li>
+        <li><strong>"A Gaivota"</strong> (2023) - Codireção</li>
+      </ul>
+    </section>
+  </div>
+</article>
+
+  <!-- Subseção Aptidões -->
+  <article class="subsection" id="skills">
+    <h3>Aptidões</h3>
+    <div class="subsection-content">
+      <section class="skills-category">
+        <h4>Habilidades Artísticas e Físicas</h4>
+        <ul class="skills-list">
+          <li>
+            <strong>Artes Marciais:</strong>
+            <span>Boxe, Jiu-Jitsu</span>
+          </li>
+          <li>
+            <strong>Natação</strong>
+          </li>
+          <li>
+            <strong>Dança</strong>
+          </li>
+          <li>
+            <strong>Canto</strong>
+          </li>
+          <li>
+            <strong>Baterista</strong>
+          </li>
+          <li>
+            <strong>Técnicas Teatrais:</strong>
+            <span>Método Stanislavski, Biomecânica Meyerhold</span>
+          </li>
+        </ul>
+      </section>
+      
+      <section class="skills-category">
+        <h4>Idiomas</h4>
+        <ul class="languages-list">
+          <li>
+            <strong>Português Nativo</strong>
+          </li>
+          <li>
+            <strong>Inglês Avançado (C1)</strong>
+          </li>
+          <li>
+            <strong>Espanhol Intermediário</strong>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</section>
 
   <!-- Seção Galeria -->
   <section id="gallery">
@@ -207,6 +297,23 @@
     window.addEventListener('load', animateSections);
     window.addEventListener('scroll', animateSections);
   </script>
+
+<!-- Botão de voltar ao topo (colocar no final do body) -->
+<div class="scroll-top">
+  <i class="fas fa-arrow-up"></i>
+</div>
     
-    
+<script>
+  function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+  
+  if (!localStorage.getItem('cookiesAccepted')) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+  </script>
+
+  <script>src="script.js"</script>
+</body>
     
